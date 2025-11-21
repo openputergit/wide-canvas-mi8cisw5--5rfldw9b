@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GOTORI STEEL - Quality Roofing & Steel Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://
+
+fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .page {
+            display: none;
+        }
+        .page.active {
+            display: block;
+        }
+        .calc-result {
+
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-5xl font-bold text-blue-500">𝓖𝓸𝓽𝓸𝓻𝓲</div>
+                <div class="hidden md:flex space-x-8">
+                    <button onclick="showPage('home')" class="text-gray-600 hover:text-blue-900">Home</button>
+                    <button onclick="showPage('products')" class="text-gray-600 hover:text-blue-900">Products</button>
+                    <button onclick="showPage('quotation')" class="text-gray-600 hover:text-blue-900">Get Quote</button>
+                    <button onclick="showPage('about')" class="text-gray-600 hover:text-blue-900">About</button>
+                    <button onclick="showPage('contact')" class="text-gray-600 hover:text-blue-900">Contact</button>
++                   <button onclick="openRateEditor()" class="text-red-600 hover:text-red-800">Edit Rates</button>
+                </div>
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i class="bi bi-list text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" 
+
+class="hidden md:hidden bg-white p-4">
+            <div class="flex flex-col space-y-4">
+                <button onclick="showPage('home')" class="text-gray-600 hover:text-blue-900">Home</button>
+                <button onclick="showPage('products')" class="text-gray-600 hover:text-blue-900">Products</button>
+                <button onclick="showPage('quotation')" class="text-gray-600 hover:text-blue-900">Get Quote</button>
+                <button onclick="showPage('about')" class="text-gray-600 hover:text-blue-900">About</button>
+                <button onclick="showPage('contact')" class="text-gray-600 hover:text-blue-900">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <div class="max-w-7xl mx-
+
+auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-4">Welcome to GOTORI STEEL</h1>
+                <p class="text-xl text-gray-600">Your trusted partner in quality steel products</p>
+                <p class="text-gray-600">TRADING IN : COLOUR COATED ROOFING SHEET, MS PIPE, MS SECTION, CR SHEET, CR COIL, ROLLING SHUTTERS MATERIAL, POLYCARBONATE EMBOSSED SHEET, UPVC WATER GUTTER, PVC FIBER SHEET & ALL IRON SECTION</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('roofingsheetpage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">                 
+                    <h2 class="text-2xl font-bold text-blue-500">ROOFING SHEETS</h2>
+                    <p class="text-gray-600">Premium quality roofing sheets from top brands with customizable sizes.</p>
+                </div>
+
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('pipepage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">
+                    <i class="bi bi-pipe text-4xl text-blue-900 mb-4"></i>
+                    <h3 class="text-2xl font-bold text-blue-500">MS PIPES</h3>
+                    <p class="text-gray-600">Wide range of MS pipes available in various sizes and weights.</p>
+                </div>
+
+
+                <div class="bg-white p-6 rounded-lg shadow-md">    
+                    <button onclick="showPage('screwpage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">
+                    <h4 class="text-2xl font-bold text-blue-500">SCREWS</h4>
+                    <p class="text-gray-600">High-quality screws for all your construction needs.</p>
+                </div>
+        
+            </div>
+
+
+            <div class="text-center">
+                <button onclick="showPage('quotation')" class="bg-blue-900 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-800 transition duration-300">
+                    Request a Quote Today!
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Products Page -->
+    <div id="products" class="page">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8">Our Products</h2>
+            
+            <!-- Roofing Sheets -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-4">Roofing Sheets</h3>
+                <div class="overflow-x-
+
+auto">
+                    <table class="w-full bg-white shadow-md rounded-lg">
+                        <thead>
+                            <tr class="bg-blue-900 text-white">
+                                <th class="px-6 py-3">Brand</th>
+                                <th class="px-6 py-3">Rate per kg</th>
+                                <th class="px-6 py-3">Width</th>
+                                <th class="px-6 py-3">Colours available</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">ESSAR</td>
+                                <td class="px-6 py-4">₹80</td>
+                                <td class="px-6 py-4">3.5 feet</td>
+                                <td class="px-6 py-4">BLUE</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">AMNS</td>
+                                <td class="px-6 py-4">₹98</td>
+                                <td class="px-6 py-4">3.5 feet</td>
+                                <td class="px-6 py-4">GREY, BRICK RED</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">AMNS</td>
+                                <td class="px-6 py-4">₹92</td>
+                                <td class="px-6 py-4">3.5 feet</td>
+                                <td class="px-6 py-4"> BLUE , TERKISH GREEN , ORANGE , EGG WHITE</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">JSW INDRADHANUSH</td>
+                                <td class="px-6 py-4">₹94</td>
+                                <td class="px-6 py-4">3.5 feet</td>
+                                <td class="px-6 py-4">BLUE , TERKISH GREEN , ORANGE , EGG WHITE</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">JSW pragati</td>
+                                <td class="px-6 py-4">₹115</td>
+                                <td class="px-6 py-4">3.5 feet</td>
+                                <td class="px-6 py-4">WHITE , GREEN , BLUE , RED </td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">JSW colouron+</td>
+                                <td class="px-6 py-4">₹125</td>
+                                <td class="px-6 py-4">3.5 feet</td>
+                                <td class="px-6 py-4">ORANGE , BLUE , WHITE</td>
+                            </tr>
+                            
+                            <!-- Add other brands... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+
+            <!-- MS Pipes -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-4">MS Pipes</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full bg-white shadow-md rounded-lg">
+                        <thead>
+                            <tr class="bg-blue-900 text-white">
+                                <th class="px-6 py-3">Size</th>
+                                <th class="px-6 py-3">Weight</th>
+                                <th class="px-6 py-3">Cost per kg</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1 inch</td>
+                                <td class="px-6 py-4">8 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1 inch</td>
+                                <td class="px-6 py-4">9 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">2 inch</td>
+                                <td class="px-6 py-4">14 kg</td>
+                                <td class="px-6 py-4">₹58</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">2 inch</td>
+                                <td class="px-6 py-4">16.5 kg</td>
+                                <td class="px-6 py-4">₹58</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">2 inch</td>
+                                <td class="px-6 py-4">20 kg</td>
+                                <td class="px-6 py-4">₹58</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1.5 inch</td>
+                                <td class="px-6 py-4">11 kg</td>
+                                <td class="px-6 py-4">₹58</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1.5 inch</td>
+                                <td class="px-6 py-4">13 kg</td>
+                                <td class="px-6 py-4">₹58</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1.5 x 2.5 inch</td>
+                                <td class="px-6 py-4">18.5 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1.5 x 3 inch</td>
+                                <td class="px-6 py-4">18 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">1.5 x 3 inch</td>
+                                <td class="px-6 py-4">22.5 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">2.5 x 2.5 inch</td>
+                                <td class="px-6 py-4">25 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">3 x 3 inch</td>
+                                <td class="px-6 py-4">32 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="px-6 py-4">4 x 4 inch</td>
+                                <td class="px-6 py-4">46.5 kg</td>
+                                <td class="px-6 py-4">₹61</td>
+                            </tr>
+
+                            <!-- Add other sizes... -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Screws -->
+            <div>
+                <h3 class="text-2xl font-semibold mb-4">Screws</h3>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+-                    <p class="text-lg">Price: ₹2 per piece</p>
++                    <p id="screwsPrice" class="text-lg">Price: ₹2 per piece</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Quotation Page -->
+    <div id="quotation" class="page">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8">Get a Quote</h2>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <form id="quotationForm" onsubmit="calculateQuote(event)">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block mb-2">Customer Name</label>
+                            <input type="text" required class="w-full p-2 border rounded" name="customerName">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Contact Number</label>
+                            <input type="tel" required class="w-full p-2 border rounded" name="phone">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Email</label>
+                            <input type="email" required class="w-full p-2 border rounded" name="email">
+                        </div>
+                        <div>
+                            <label class="block mb-2">Product Type</label>
+                            <select class="w-full p-2 border rounded" name="productType" onchange="updateProductFields()">
+                                <option value="roofing">Roofing Sheets</option>
+                                <option value="pipes">MS Pipes</option>
+                                <option value="screws">Screws</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Dynamic Product Fields -->
+                    <div id="productFields" class="mt-6">
+                        <!-- Fields will be populated by JavaScript -->
+                    </div>
+
+                    <div class="mt-4 flex gap-4">
+                        <button type="button" onclick="addItem()" class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700">
+                            Add Item to Quote
+                        </button>
+                        <button type="submit" class="bg-blue-900 text-white px-6 py-2 rounded hover:bg-blue-800">
+                            Calculate Quote
+                        </button>
+                    </div>
+
+                    <!-- Items list -->
+                    <div id="itemsList" class="mt-6">
+                        <!-- added items will appear here -->
+                    </div>
+                </form>
+
+                
+                
+                
+                
+
+                <!-- Quote Result -->
+                <div id="quoteResult" class="mt-8 hidden">
+                    <!-- Results will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="max-w-7xl mx-
+
+auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8">About GOTORI STEEL</h2>
+            <div class="bg-white p-8 rounded-lg shadow-md">
+                <p class="text-lg mb-4">
+                    GOTORI STEEL is a leading provider of high-quality steel products in the construction industry. 
+                    With years of experience, we've built a reputation for reliability and excellence.
+                </p>
+
+                <p class="text-lg mb-4">
+                    Our commitment to quality and customer satisfaction drives everything we do. 
+                    We offer competitive prices without compromising on product quality.
+                </p>
+                <div class="grid md:grid-cols-3 gap-6 mt-8">
+                    <div class="text-center">
+                        <i class="bi bi-award text-4xl text-blue-900 mb-4"></i>
+
+                        <h3 class="text-xl font-semibold mb-2">Quality Assured</h3>
+                        <p class="text-gray-600">Premium products from trusted brands</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-people text-4xl text-blue-900 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Customer First</h3>
+                        <p class="text-gray-600">Dedicated to your satisfaction</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="bi bi-currency-rupee text-4xl text-blue-900 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Competitive Pricing</h3>
+                        <p class="text-gray-600">Best value for your investment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- screw display Page -->
+    <div id="screwpage" class="page">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8">SCREWS PAGE</h2>
+            <!-- Add screw details here -->
+        </div>
+    </div>
+    
+    <!-- pipe display Page -->
+    <div id="pipepage" class="page">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8">pipes PAGE</h2>
+            <!-- Add pipe details here -->
+        </div>
+    </div>
+
+
+
+
+    <!-- roofingsheet display Page -->
+
+    <div id="roofingsheetpage" class="page">
+       
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-6xl font-bold text-blue-900 mb-4">ROOFING SHEETS</h1>
+                
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('amnspage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">                 
+                    <h2 class="text-5xl md:text-5xl font-bold">
+                        <span class="text-red-600">AM/NS</span>
+                        <span class="text-gray-800">INDIA</span></h2>
+                </div>
+
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('pipepage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">
+                    <h3 class="text-5xl md:text-5xl font-bold">
+                        <span class="text-blue-600">JSW</span>
+                        <span class="text-gray-800">indradhanush</span></h3>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('pipepage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">
+                    <h3 class="text-5xl md:text-5xl font-bold">
+                        <span class="text-blue-600">JSW</span>
+                        <span class="text-gray-800">colouron+</span></h3>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('pipepage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">
+                    <h3 class="text-5xl md:text-5xl font-bold">
+                        <span class="text-blue-600">JSW</span>
+                        <span class="text-gray-800">pragathi+</span></h3>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <button onclick="showPage('pipepage')" class="bg-blue-20 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-200 transition duration-300">
+                    <h3 class="text-5xl md:text-5xl font-bold">
+                        <span class="text-gray-600">ESSAR +</span></h3>
+                        
+                </div>
+
+
+
+
+
+                
+        
+            </div>
+
+
+            <div class="text-center">
+                <button onclick="showPage('quotation')" class="bg-blue-900 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-800 transition duration-300">
+                    Request a Quote Today!
+                </button>
+            </div>
+            </div>
+    </div>
+    
+
+    <!-- AMNS display Page -->
+    <div id="amnspage" class="page">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-4xl md:text-3xl font-bold">
+                <span class="text-red-600">AM/NS</span>
+                <span class="text-gray-800">INDIA</span></h2>
+            <div class="container mx-auto px-4 py-8">                
+        
+                <!-- Product Showcase -->
+
+<div id="gallery" class="relative w-full" data-carousel="slide">
+    <!-- Carousel wrapper -->
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+         <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://www.amns.in/storage/add-products/July2024/TowptvB3fTDv7LUMxGCX.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item="active">
+            <img src="https://as1.ftcdn.net/v2/jpg/03/76/20/64/1000_F_376206454_Zixhhv2VODTK6LZUcUxocs1u7YJZAX7Z.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://t3.ftcdn.net/jpg/12/92/82/96/240_F_1292829607_kZCOR4R3SEniUzEsipyTlnpEW4ytvVgs.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 4 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+        <!-- Item 5 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <img src="https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg" class="absolute block max-w-full h-auto -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="">
+        </div>
+    </div>
+    <!-- Slider controls -->
+    <button type="button" class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+            </svg>
+            <span class="sr-only">Previous</span>
+        </span>
+    </button>
+    <button type="button" class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+        <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+            <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+            </svg>
+            <span class="sr-only">Next</span>
+        </span>
+    </button>
+</div>
+</div>
+
+
+
+
+
+        
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="bi bi-clock-history text-2xl text-blue-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">SST 1200+ hours</h3>
+                        <p class="text-gray-600">Enhanced durability with superior salt spray test resistance</p>
+                    </div>
+        
+                    <!-- Feature 2 -->
+                    <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="bi bi-piggy-bank text-2xl text-green-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Cost Effective</h3>
+                        <p class="text-gray-600">Saving in number of sheets & labour cost</p>
+                    </div>
+        
+                    <!-- Feature 3 -->
+                    <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <i class="bi bi-boxes text-2xl text-purple-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Advanced Design</h3>
+                        <p class="text-gray-600">Advanced design for better strength</p>
+                    </div>
+        
+                    <!-- Feature 4 -->
+                    <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-cyan-100 rounded-lg flex items-center justify-center">
+                            <i class="bi bi-droplet-fill text-2xl text-cyan-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Perfect Waterproofing</h3>
+                        <p class="text-gray-600">Perfect overlapping for ideal waterproofing</p>
+                    </div>
+        
+                    <!-- Feature 5 -->
+                    <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-red-100 rounded-lg flex items-center justify-center">
+                            <i class="bi bi-shield-shaded text-2xl text-red-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">High Strength</h3>
+                        <p class="text-gray-600">High tensile strength upto 650 MPa Plus</p>
+                    </div>
+        
+                    <!-- Feature 6 -->
+                    <div class="feature-card bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-lg flex items-center justify-center">
+                            <i class="bi bi-wind text-2xl text-orange-600"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Wind Resistant</h3>
+                        <p class="text-gray-600">Withstands wind velocity upto 180 km/hr*</p>
+                    </div>
+                </div>
+            </div>
+        
+            
+            </footer>
+            
+            
+        </div>
+    </div>
+
+            
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="max-w-7xl mx-auto px-4 py-12">
+            <h2 class="text-3xl font-bold text-blue-900 mb-8">Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl 
+
+font-semibold mb-4">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <p class="flex items-center">
+                            <i class="bi bi-geo-alt text-xl text-blue-900 mr-3"></i>
+                            shop no.7-1031, jajee compound darga road, mijgori
+                            gunj, kalaburgi-585104 karnataka
+                        </p>
+                        <p class="flex items-center">
+                            <i class="bi bi-telephone text-xl text-blue-900 
+
+mr-3"></i>
+                            <a href="tel:+919019465266">9019465266</a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="bi bi-envelope text-xl text-blue-900 mr-3"></i>
+                            <a href="mailto:info@gotoristeel.com">hashirgotori0@gmail.com</a>
+                        </p>
+                        <p class="flex items-center">
+
+                            <i class="bi bi-whatsapp text-xl text-blue-900 mr-3"></i>
+                            <a href="https://wa.me/9019465266">WhatsApp Us</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Location</h3>
+                    <div class="h-64 bg-gray-200 rounded-lg">
+
+                        <!-- Replace with actual Google Maps embed -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.3006680159283!2d76.84002717420863!3d17.34925930390439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc8c7f502eeb875%3A0xb589f16cb7f7d9e8!2sNEW%20GOTORI%20STEEL!5e0!3m2!1sen!2sin!4v1734178954385!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-3xl font-bold text-blue-900 mb-8"> Also Contact Us</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl 
+
+font-semibold mb-4">Get in Touch</h3>
+                    <div class="space-y-4">
+                        <p class="flex items-center">
+                            <i class="bi bi-geo-alt text-xl text-blue-900 mr-3"></i>
+                            Plot no.184/P2, Nandur Kesartagi Industrial Area, Shahabad road Kalaburgi 
+                        </p>
+                        <p class="flex items-center">
+                            <i class="bi bi-telephone text-xl text-blue-900 
+
+mr-3"></i>
+                            <a href="tel:+919019465266">9019465266</a>
+                        </p>
+                        <p class="flex items-center">
+                            <i class="bi bi-envelope text-xl text-blue-900 mr-3"></i>
+                            <a href="mailto:info@gotoristeel.com">info@gotoristeel.com</a>
+                        </p>
+                        <p class="flex items-center">
+
+                            <i class="bi bi-whatsapp text-xl text-blue-900 mr-3"></i>
+                            <a href="https://wa.me/9019465266">WhatsApp Us</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4">Location</h3>
+                    <div class="h-64 bg-gray-200 rounded-lg">
+
+                        <!-- Replace with actual Google Maps embed -->
+                        <div class="w-full h-full flex items-center justify-center">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3809.93791179077!2d76.8769179!3d17.270238499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc8c1e486a547c9%3A0x50e15437eae919c1!2sGOTORI%20STEEL!5e0!3m2!1sen!2sin!4v1734179678233!5m2!1sen!2sin" width="600" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Navigation
+        function showPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+            if (window.innerWidth < 768) document.getElementById('mobileMenu').classList.add('hidden');
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Product pricing data
+        const products = {
+            roofing: {
+                brands: {
+                    'AMNS': 92,
+                    'JSW INDRADHANUSH': 94,
+                    'JSW Pragati': 115,
+                    'JSW Colouron+': 125,
+                    'Essar': 80
+                },
+                weightPerFoot: 1.35
+            },
+            pipes: {
+                sizes: {
+                    '1 inch': { weights: [8, 9], rate: 61 },
+                    '1.5 inch': { weights: [11, 13], rate: 58 },
+                    '2 inch': { weights: [14, 16.5, 20], rate: 58 },
+                    '2.5 inch': { weight: 25, rate: 61 },
+                    '3 inch': { weight: 32, rate: 61 },
+                    '4 inch': { weight: 46.5, rate: 61 },
+                    '1.5 x 3 inch': { weights: [18, 22.5], rate: 61 },
+                    '1.5 x 2.5 inch': { weight: 18.5, rate: 61 }
+                }
+            },
+            screws: { rate: 2 }
+        };
+
+        // items array to accumulate selected products
+        const quoteItems = [];
+
+        // --- Quote storage (localStorage) ---
+        const QUOTES_KEY = 'gotoristeel_quotes';
+        function loadSavedQuotes() {
+            try {
+                const raw = localStorage.getItem(QUOTES_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch (e) {
+                console.error('loadSavedQuotes error', e);
+                return [];
+            }
+        }
+        function saveQuotesToStorage(quotes) {
+            try {
+                localStorage.setItem(QUOTES_KEY, JSON.stringify(quotes));
+            } catch (e) {
+                console.error('saveQuotesToStorage error', e);
+            }
+        }
+        function addSavedQuote(quote) {
+            const quotes = loadSavedQuotes();
+            quotes.unshift(quote); // newest first
+            saveQuotesToStorage(quotes);
+            updateSavedQuotesCount();
+        }
+        function updateSavedQuotesCount() {
+            const c = loadSavedQuotes().length;
+            const el = document.getElementById('savedQuotesCount');
+            if (el) el.textContent = c;
+        }
+
+        // Update product fields based on selection
+        function updateProductFields() {
+            const productType = document.querySelector('[name="productType"]').value;
+            const fieldsContainer = document.getElementById('productFields');
+            let html = '';
+
+            switch (productType) {
+                case 'roofing':
+                    html = `
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block mb-2">Brand</label>
+                                <select name="brand" class="w-full p-2 border rounded" required>
+                                   ${Object.keys(products.roofing.brands).map(brand => `<option value="${brand}">${brand}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Length (feet)</label>
+                                <input type="number" name="length" required class="w-full p-2 border rounded" min="1" value="6">
+                            </div>
+                            <div>
+                                <label class="block mb-2">Quantity</label>
+                                <input type="number" name="quantity" required class="w-full p-2 border rounded" min="1" value="1">
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'pipes':
+                    html = `
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block mb-2">Size</label>
+                                <select name="size" class="w-full p-2 border rounded" required onchange="updateWeightOptions()">
+                                    ${Object.keys(products.pipes.sizes).map(size => `<option value="${size}">${size}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Weight (kg)</label>
+                                <select name="weight" class="w-full p-2 border rounded" required>
+                                    <!-- Options will be populated by updateWeightOptions() -->
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block mb-2">Quantity</label>
+                                <input type="number" name="quantity" required class="w-full p-2 border rounded" min="1" value="1">
+                            </div>
+                        </div>
+                    `;
+                    break;
+                case 'screws':
+                    html = `
+                        <div>
+                            <label class="block mb-2">Quantity</label>
+                            <input type="number" name="quantity" required class="w-full p-2 border rounded" min="1" value="10">
+                        </div>
+                    `;
+                    break;
+            }
+
+            fieldsContainer.innerHTML = html;
+            if (productType === 'pipes') setTimeout(updateWeightOptions, 0);
+        }
+
+        function updateWeightOptions() {
+            const sizeSelect = document.querySelector('[name="size"]');
+            if (!sizeSelect) return;
+            const size = sizeSelect.value;
+            const weightSelect = document.querySelector('[name="weight"]');
+            const sizeData = products.pipes.sizes[size] || {};
+
+            // normalize possible keys
+            let weightsArr = [];
+            if (Array.isArray(sizeData.weights)) weightsArr = sizeData.weights;
+            else if (Array.isArray(sizeData.weight)) weightsArr = sizeData.weight;
+            else if (typeof sizeData.weight === 'number') weightsArr = [sizeData.weight];
+
+            let options = '';
+            if (weightsArr.length) {
+                options = weightsArr.map(w => `<option value="${w}">${w} kg</option>`).join('');
+            } else {
+                options = `<option value="0">N/A</option>`;
+            }
+            weightSelect.innerHTML = options;
+        }
+
+        function addItem() {
+            const form = document.getElementById('quotationForm');
+            const fd = new FormData(form);
+            const productType = fd.get('productType');
+            if (!productType) { alert('Select a product type first.'); return; }
+
+            let item = null;
+            if (productType === 'roofing') {
+                const brand = fd.get('brand');
+                const length = parseFloat(fd.get('length')) || 0;
+                const quantity = parseInt(fd.get('quantity')) || 0;
+                const rate = products.roofing.brands[brand] || 0;
+                const weightPerSheet = length * products.roofing.weightPerFoot;
+                const total = weightPerSheet * rate * quantity;
+                item = { type: 'Roofing Sheets', details: `${brand} - ${length} ft`, unitWeight: weightPerSheet.toFixed(2) + ' kg', unitRate: rate, quantity, total };
+            } else if (productType === 'pipes') {
+                const size = fd.get('size');
+                const weight = parseFloat(fd.get('weight')) || 0;
+                const quantity = parseInt(fd.get('quantity')) || 0;
+                const rate = (products.pipes.sizes[size] && products.pipes.sizes[size].rate) || 0;
+                const total = weight * rate * quantity;
+                item = { type: 'MS Pipes', details: `${size} - ${weight} kg`, unitWeight: weight + ' kg', unitRate: rate, quantity, total };
+            } else if (productType === 'screws') {
+                const quantity = parseInt(fd.get('quantity')) || 0;
+                const rate = products.screws.rate;
+                const total = quantity * rate;
+                item = { type: 'Screws', details: `Per piece`, unitWeight: '-', unitRate: rate, quantity, total };
+            }
+
+            if (item) {
+                quoteItems.push(item);
+                renderItems();
+                updateProductFields();
+            }
+        }
+
+        function renderItems() {
+            const container = document.getElementById('itemsList');
+            if (!quoteItems.length) {
+                container.innerHTML = '<p class="text-gray-600">No items added yet. Use "Add Item to Quote".</p>';
+                return;
+            }
+
+            const rows = quoteItems.map((it, idx) => `
+                <tr class="border-b">
+                    <td class="px-4 py-2">${idx + 1}</td>
+                    <td class="px-4 py-2">${it.type}</td>
+                    <td class="px-4 py-2">${it.details}</td>
+                    <td class="px-4 py-2">${it.unitRate}</td>
+                    <td class="px-4 py-2">${it.quantity}</td>
+                    <td class="px-4 py-2">₹${it.total.toFixed(2)}</td>
+                    <td class="px-4 py-2"><button onclick="removeItem(${idx})" class="text-red-600 hover:underline">Remove</button></td>
+                </tr>
+            `).join('');
+
+            container.innerHTML = `
+                <div class="overflow-x-auto bg-white p-4 rounded shadow">
+                    <table class="w-full">
+                        <thead class="bg-blue-900 text-white">
+                            <tr>
+                                <th class="px-4 py-2">#</th>
+                                <th class="px-4 py-2">Type</th>
+                                <th class="px-4 py-2">Details</th>
+                                <th class="px-4 py-2">Rate</th>
+                                <th class="px-4 py-2">Qty</th>
+                                <th class="px-4 py-2">Total</th>
+                                <th class="px-4 py-2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${rows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        function removeItem(index) {
+            quoteItems.splice(index, 1);
+            renderItems();
+        }
+
+        function calculateQuote(event) {
+            event.preventDefault();
+            // if no items added, try to add currently selected product
+            if (!quoteItems.length) addItem();
+            if (!quoteItems.length) { alert('Please add at least one item to the quote.'); return; }
+
+            const form = document.getElementById('quotationForm');
+            const fd = new FormData(form);
+            const customerName = fd.get('customerName') || '';
+            const phone = fd.get('phone') || '';
+            const email = fd.get('email') || '';
+
+            const totalAmount = quoteItems.reduce((s, it) => s + Number(it.total || 0), 0);
+
+            const itemsHtml = quoteItems.map(it => `
+                <div class="mb-2">
+                    <strong>${it.type}</strong> — ${it.details} — Qty: ${it.quantity} — ₹${it.total.toFixed(2)}
+                </div>
+            `).join('');
+
+            const result = document.getElementById('quoteResult');
+            result.innerHTML = `
+                <div class="border-t pt-6">
+                    <h3 class="text-xl font-semibold mb-4">Quotation Details</h3>
+                    <div class="mb-4">
+                        <p><strong>Customer:</strong> ${customerName}</p>
+                        <p><strong>Phone:</strong> ${phone}</p>
+                        <p><strong>Email:</strong> ${email}</p>
+                    </div>
+                    ${itemsHtml}
+                    <p class="text-xl font-bold mt-4">Grand Total: ₹${totalAmount.toFixed(2)}</p>
+                    <div class="mt-6 flex gap-4">
+                        <button onclick="printQuote()" class="bg-blue-900 text-white px-4 py-2 rounded hover:bg-blue-800">Print Quote</button>
+                        <button onclick="emailQuote()" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Email Quote</button>
+                    </div>
+                </div>
+            `;
+            result.classList.remove('hidden');
+
+            // Save this quote to localStorage (store a copy of items)
+            const quoteObject = {
+                id: 'Q' + Date.now(),
+                timestamp: new Date().toISOString(),
+                customerName, phone, email,
+                items: JSON.parse(JSON.stringify(quoteItems)),
+                total: Number(totalAmount)
+            };
+            addSavedQuote(quoteObject);
+        }
+
+        function printQuote() { window.print(); }
+        function emailQuote() { alert('Email functionality will be implemented based on server-side requirements'); }
+
+        // Initialize the product fields and items area
+        updateProductFields();
+        renderItems();
+
+        /* Rate editor + Saved quotes modal (inserted as HTML) */
+        document.write(`
+<div id="rateEditorModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+  <div class="bg-white p-6 rounded w-full max-w-3xl mx-4">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="text-xl font-bold">Admin Panel</h3>
+      <button onclick="closeRateEditor()" class="px-3 py-1 bg-gray-200 rounded">Close</button>
+    </div>
+
+    <div class="flex gap-2 mb-4">
+      <button id="ratesTabBtn" onclick="showRateEditorTab('rates')" class="px-3 py-1 bg-blue-900 text-white rounded">Edit Rates</button>
+      <button id="quotesTabBtn" onclick="showRateEditorTab('quotes')" class="px-3 py-1 bg-gray-200 rounded">Saved Quotes (<span id="savedQuotesCount">0</span>)</button>
+    </div>
+
+    <div id="rateEditorArea">
+      <div id="ratesContent">
+        <form id="rateEditorForm" class="space-y-4">
+          <div id="rateEditorFields" class="space-y-2 max-h-64 overflow-auto"></div>
+          <div class="mt-4 flex justify-end gap-2">
+            <button type="button" onclick="closeRateEditor()" class="px-4 py-2 bg-gray-200 rounded">Cancel</button>
+            <button type="submit" class="px-4 py-2 bg-blue-900 text-white rounded">Save Rates</button>
+          </div>
+        </form>
+      </div>
+
+      <div id="quotesContent" class="hidden">
+        <div id="savedQuotesList" class="space-y-2 max-h-64 overflow-auto"></div>
+      </div>
+    </div>
+  </div>
+</div>
+`);
+
+        /* Admin editor functions */
+        function openRateEditor() {
+          const pass = prompt('Enter admin password:');
+          if (pass !== '6969') { alert('Wrong password'); return; }
+          buildRateEditorFields();
+          renderSavedQuotes();
+          updateSavedQuotesCount();
+          showRateEditorTab('rates');
+          const m = document.getElementById('rateEditorModal');
+          if (m) { m.classList.remove('hidden'); m.classList.add('flex'); }
+        }
+
+        function closeRateEditor() {
+          const m = document.getElementById('rateEditorModal');
+          if (m) { m.classList.add('hidden'); m.classList.remove('flex'); }
+        }
+
+        function showRateEditorTab(tab) {
+          const rates = document.getElementById('ratesContent');
+          const quotes = document.getElementById('quotesContent');
+          const ratesBtn = document.getElementById('ratesTabBtn');
+          const quotesBtn = document.getElementById('quotesTabBtn');
+          if (!rates || !quotes || !ratesBtn || !quotesBtn) return;
+          if (tab === 'rates') {
+            rates.classList.remove('hidden');
+            quotes.classList.add('hidden');
+            ratesBtn.classList.add('bg-blue-900','text-white');
+            quotesBtn.classList.remove('bg-blue-900','text-white');
+            quotesBtn.classList.add('bg-gray-200');
+          } else {
+            rates.classList.add('hidden');
+            quotes.classList.remove('hidden');
+            ratesBtn.classList.remove('bg-blue-900','text-white');
+            ratesBtn.classList.add('bg-gray-200');
+            quotesBtn.classList.remove('bg-gray-200');
+            quotesBtn.classList.add('bg-blue-900','text-white');
+            renderSavedQuotes();
+          }
+        }
+
+        /* build editable inputs from current products object */
+        function buildRateEditorFields() {
+          const container = document.getElementById('rateEditorFields');
+          if (!container) return;
+          let html = '<h4 class="font-semibold">Roofing - rate per kg</h4>';
+          Object.keys(products.roofing.brands).forEach(key => {
+            const val = products.roofing.brands[key];
+            const name = `roofing-${key.replace(/\s+/g,'__')}`;
+            html += `<div class="flex gap-2 items-center">
+              <label class="w-48">${key}</label>
+              <input type="number" step="0.01" name="${name}" value="${val}" class="p-2 border rounded w-36">
+            </div>`;
+          });
+
+          html += '<hr class="my-2"><h4 class="font-semibold">Pipes - rate per kg (by size)</h4>';
+          Object.keys(products.pipes.sizes).forEach(size => {
+            const rate = (products.pipes.sizes[size] && products.pipes.sizes[size].rate) || 0;
+            const name = `pipes-${size.replace(/\s+/g,'__')}`;
+            html += `<div class="flex gap-2 items-center">
+              <label class="w-48">${size}</label>
+              <input type="number" step="0.01" name="${name}" value="${rate}" class="p-2 border rounded w-36">
+            </div>`;
+          });
+
+          html += '<hr class="my-2"><h4 class="font-semibold">Screws</h4>';
+          html += `<div class="flex gap-2 items-center">
+              <label class="w-48">Per piece</label>
+              <input type="number" step="0.01" name="screws-rate" value="${products.screws.rate}" class="p-2 border rounded w-36">
+            </div>`;
+
+          container.innerHTML = html;
+
+          const form = document.getElementById('rateEditorForm');
+          form.onsubmit = saveRates;
+        }
+
+        /* save rates back into products object and update UI */
+        function saveRates(event) {
+          if (event && event.preventDefault) event.preventDefault();
+          const form = document.getElementById('rateEditorForm');
+          const fd = new FormData(form);
+
+          // roofing
+          Object.keys(products.roofing.brands).forEach(key => {
+            const name = `roofing-${key.replace(/\s+/g,'__')}`;
+            const val = parseFloat(fd.get(name));
+            if (!isNaN(val)) products.roofing.brands[key] = val;
+          });
+
+          // pipes
+          Object.keys(products.pipes.sizes).forEach(size => {
+            const name = `pipes-${size.replace(/\s+/g,'__')}`;
+            const val = parseFloat(fd.get(name));
+            if (!isNaN(val)) products.pipes.sizes[size].rate = val;
+          });
+
+          // screws
+          const screwsVal = parseFloat(fd.get('screws-rate'));
+          if (!isNaN(screwsVal)) products.screws.rate = screwsVal;
+
+          // update UI where rates are shown and recalc areas
+          updateProductFields(); // so product add form uses new rates
+          renderItems();         // update items totals if needed
+          updateProductsDisplay(); // update the Products page visible rates
+          closeRateEditor();
+          alert('Rates updated');
+        }
+
+        /* render saved quotes list inside modal */
+        function renderSavedQuotes() {
+          const list = document.getElementById('savedQuotesList');
+          if (!list) return;
+          const quotes = loadSavedQuotes();
+          if (!quotes.length) {
+            list.innerHTML = '<p class="text-gray-600">No saved quotes yet.</p>';
+            return;
+          }
+          const html = quotes.map((q, idx) => {
+            const dt = new Date(q.timestamp).toLocaleString();
+            return `<div class="p-3 border rounded flex justify-between items-start">
+              <div>
+                <div class="font-semibold">#${q.id} — ${q.customerName || 'Unknown'}</div>
+                <div class="text-sm text-gray-600">${q.phone || ''} • ${dt}</div>
+                <div class="mt-2 text-sm">Items: ${q.items.length} — Total: ₹${Number(q.total).toFixed(2)}</div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <button class="px-3 py-1 bg-blue-900 text-white rounded" onclick="viewQuoteDetails('${q.id}')">View</button>
+                <button class="px-3 py-1 bg-red-600 text-white rounded" onclick="deleteSavedQuote('${q.id}')">Delete</button>
+              </div>
+            </div>`;
+          }).join('');
+          list.innerHTML = html;
+          updateSavedQuotesCount();
+        }
+
+        function viewQuoteDetails(id) {
+          const quotes = loadSavedQuotes();
+          const q = quotes.find(x => x.id === id);
+          if (!q) { alert('Quote not found'); return; }
+          const list = document.getElementById('savedQuotesList');
+          list.innerHTML = `
+            <div class="mb-4">
+              <button class="px-3 py-1 bg-gray-200 rounded mb-2" onclick="renderSavedQuotes()">Back to list</button>
+              <div class="font-semibold">Quote #${q.id}</div>
+              <div class="text-sm text-gray-600">${new Date(q.timestamp).toLocaleString()}</div>
+              <div class="mt-2"><strong>Customer:</strong> ${q.customerName || ''}</div>
+              <div><strong>Phone:</strong> ${q.phone || ''}</div>
+              <div><strong>Email:</strong> ${q.email || ''}</div>
+              <div class="mt-3">
+                <strong>Items:</strong>
+                <div class="mt-2 space-y-2">
+                  ${q.items.map(it => `<div class="p-2 border rounded"><strong>${it.type}</strong> — ${it.details} — Qty: ${it.quantity} — ₹${Number(it.total).toFixed(2)}</div>`).join('')}
+                </div>
+                <div class="mt-3 font-bold">Grand Total: ₹${Number(q.total).toFixed(2)}</div>
+              </div>
+            </div>
+          `;
+        }
+
+        function deleteSavedQuote(id) {
+          if (!confirm('Delete this quote?')) return;
+          let quotes = loadSavedQuotes();
+          quotes = quotes.filter(q => q.id !== id);
+          saveQuotesToStorage(quotes);
+          renderSavedQuotes();
+        }
+
+        /* update visible Products page rates (search table rows by text) */
+        function updateProductsDisplay() {
+          // roofing table: update rate column for matching brand names
+          const roofingRows = document.querySelectorAll('#products table:first-of-type tbody tr');
+          roofingRows.forEach(row => {
+            const tds = row.querySelectorAll('td');
+            if (tds.length >= 2) {
+              const brandCell = tds[0].textContent.trim().toLowerCase();
+              Object.keys(products.roofing.brands).forEach(brand => {
+                if (brandCell.includes(brand.toLowerCase())) {
+                  tds[1].textContent = '₹' + Number(products.roofing.brands[brand]).toFixed(2);
+                }
+              });
+            }
+          });
+
+          // pipes table: update rate column for matching size names
+          const pipeTables = Array.from(document.querySelectorAll('#products table'));
+          // find the pipes table by checking header text "Size" present
+          let pipesTable;
+          for (const t of pipeTables) {
+            const th = t.querySelector('thead th');
+            if (th && th.textContent.toLowerCase().includes('size')) { pipesTable = t; break; }
+          }
+          if (pipesTable) {
+            const prow = pipesTable.querySelectorAll('tbody tr');
+            prow.forEach(row => {
+              const tds = row.querySelectorAll('td');
+              if (tds.length >= 3) {
+                const sizeCell = tds[0].textContent.trim().toLowerCase();
+                Object.keys(products.pipes.sizes).forEach(size => {
+                  if (sizeCell.includes(size.toLowerCase())) {
+                    const rate = products.pipes.sizes[size].rate || 0;
+                    tds[2].textContent = '₹' + Number(rate).toFixed(2);
+                  }
+                });
+              }
+            });
+          }
+
+          // screws price
+          const sp = document.getElementById('screwsPrice');
+          if (sp) sp.textContent = `Price: ₹${Number(products.screws.rate).toFixed(2)} per piece`;
+        }
+
+        /* call update initially to sync displayed rates if user changes them on reload */
+        updateProductsDisplay();
+        updateSavedQuotesCount();
+    </script>
+
+
+
+<!-- ...existing code... -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.3.0/dist/flowbite.min.js">
+    
+</script>
+<script>document.body.addEventListener('wheel', e => { if (!e.ctrlKey) return; e.preventDefault(); return }, { passive: false })</script>
+	</body>
+</html>
